@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="56fc0228-9de4-4479-a497-39826483bcec">
+	<property name="ireport.zoom" value="1.1000000000000005"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<parameter name="cetak1" class="java.lang.String"/>
+	<parameter name="cetak2" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select digitallogbook.Tanggal, digitallogbook.Jam,pustakaalat.namaalat, digitallogbook.uraianKegiatan,digitallogbook.namaPetugas,digitallogbook.prioritas from digitallogbook join pustakaalat on digitallogbook.idalat=pustakaalat.idalat where tanggal between $P{cetak1} and $P{cetak2}]]>
+	</queryString>
+	<field name="Tanggal" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Jam" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="namaalat" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="uraianKegiatan" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="namaPetugas" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="prioritas" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="2" width="555" height="68" uuid="b54ccd8a-922f-4906-975a-5ae42fae1efe"/>
+				<box bottomPadding="6"/>
+				<imageExpression><![CDATA["C:\\Users\\HP\\Documents\\NetBeansProjects\\LogBook\\src\\iReport\\20150217233155!Logo_AngkasaPuraII_2014.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="41" splitType="Stretch">
+			<staticText>
+				<reportElement style="Column header" x="0" y="23" width="66" height="15" forecolor="#000000" uuid="8acc17cb-37da-4fbf-9f15-6fc063b20ca9"/>
+				<textElement>
+					<font fontName="Times New Roman" size="13"/>
+				</textElement>
+				<text><![CDATA[Tanggal]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="76" y="24" width="55" height="15" forecolor="#000000" uuid="0eb983ae-d18e-4f1d-a80b-0332f30115f5"/>
+				<textElement>
+					<font fontName="Times New Roman" size="13"/>
+				</textElement>
+				<text><![CDATA[Jam]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="131" y="23" width="92" height="15" forecolor="#000000" uuid="558b4db7-cd6c-4264-a9f5-3e1e33d4e9e1"/>
+				<textElement>
+					<font fontName="Times New Roman" size="13"/>
+				</textElement>
+				<text><![CDATA[Nama Alat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="223" y="23" width="168" height="15" forecolor="#000000" uuid="9fba3fae-f586-414a-a23e-bb69a2be8678"/>
+				<textElement>
+					<font fontName="Times New Roman" size="13"/>
+				</textElement>
+				<text><![CDATA[Uraian Kegiatan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="402" y="23" width="92" height="15" forecolor="#000000" uuid="cb4fa3dc-4c64-42fe-beb8-5a8e00c3299e"/>
+				<textElement>
+					<font fontName="Times New Roman" size="13"/>
+				</textElement>
+				<text><![CDATA[Nama Petugas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="494" y="23" width="58" height="15" forecolor="#000000" uuid="85a43c9c-0e2a-44e8-bc6a-20910df79b8e"/>
+				<textElement>
+					<font fontName="Times New Roman" size="13"/>
+				</textElement>
+				<text><![CDATA[Prioritas]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="51" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="45" width="555" height="1" uuid="6773fcf6-ec00-44d9-833d-7dae7de8b125"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="Detail" x="0" y="5" width="66" height="40" uuid="a429f256-fa5c-4e4b-8042-22cf286359a3"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Tanggal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="76" y="5" width="55" height="40" uuid="2dbc830f-c28a-4075-b230-805b9edeb7aa"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Jam}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="223" y="5" width="168" height="40" uuid="a3231463-3bd6-4d91-8a22-22afb8ae6ba7"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{uraianKegiatan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="402" y="5" width="92" height="40" uuid="7c12d91a-775c-47fc-b8bd-7cdc58d01e40"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{namaPetugas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="494" y="5" width="58" height="40" uuid="45080d44-36fc-4def-849f-0b321b6f8a78"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{prioritas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="131" y="5" width="92" height="40" uuid="4102c48e-a465-4967-9e8b-2eec675419b7"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{namaalat}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="0" width="555" height="1" uuid="ed803f48-2f76-41f3-aeb9-ec481be2f642"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="f32430a0-edbe-443c-894c-caede4ed52ac"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="edae9017-384b-47b6-aade-6de53e69c606"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="523" y="0" width="32" height="20" uuid="613dea25-4dcb-4644-b9ee-18939174f699"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="473" y="0" width="50" height="20" uuid="c66ff415-4af1-42d9-a553-52927407030d"/>
+				<text><![CDATA[Halaman]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

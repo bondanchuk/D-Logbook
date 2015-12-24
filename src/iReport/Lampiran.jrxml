@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="18768756-f728-4fee-9658-e923848b2da2">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString>
+		<![CDATA[select uraiankegiatan, gambar from digitallogbook where id=4]]>
+	</queryString>
+	<field name="uraiankegiatan" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="gambar" class="java.io.InputStream">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="98" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="555" height="68" uuid="9795f9fd-f6d5-4253-af8e-7c27c3303b90"/>
+				<box bottomPadding="6"/>
+				<imageExpression><![CDATA["C:\\Users\\HP\\Documents\\NetBeansProjects\\LogBook\\src\\iReport\\20150217233155!Logo_AngkasaPuraII_2014.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="11" y="77" width="100" height="16" uuid="0b22a413-d301-4a3a-95b0-b512a44ffd12"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Lampiran]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement style="Column header" x="11" y="2" width="266" height="15" forecolor="#000000" uuid="9ff049d8-e195-45d0-8c2c-f395338b6a25"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Uraian Kegiatan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="287" y="2" width="267" height="15" forecolor="#000000" uuid="e0ed4305-3fc1-406d-966b-0a35886abd4f"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Foto]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="137" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="-2" y="135" width="555" height="1" uuid="b80f83e0-94b4-42f6-af05-680457ae7b24"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<image>
+				<reportElement x="287" y="6" width="252" height="124" uuid="1e1fa346-2904-4b05-bdd5-f02635e96bb0"/>
+				<imageExpression><![CDATA[$F{gambar}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement style="Detail" x="11" y="5" width="266" height="124" uuid="d73a7ad7-16d9-43f8-b2e9-68366999c1c9"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{uraiankegiatan}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="0" width="555" height="1" uuid="3ab6d0a0-8fcb-4401-a32a-2bc521d6050d"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="a0111cb5-b66e-464d-9773-0c6a526fff3a"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="668ed28f-870e-470e-896f-0bcec592b15b"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="473" y="0" width="100" height="20" uuid="1964e2d0-57ff-41c0-9883-d5f46883b5f9"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
